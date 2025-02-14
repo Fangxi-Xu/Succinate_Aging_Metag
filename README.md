@@ -18,6 +18,7 @@ interventions in aging-related oral health issues.
 ## Featured Figures
 
 ![Figure 3](/figures/Figure3_final_submission.png)
+
 *Figure 3: Reduced age-related changes in functional potential at the gene family level occur in
 the absence of SUCNR1.*
 
@@ -30,7 +31,7 @@ link pending
 For further information or data requests, please contact:
 - Fangxi Xu
 - Email: fx363@nyu.edu
-- Institution: NEW York University
+- Institution: New York University
 
 
 
