@@ -53,8 +53,8 @@ col_ann_1 <- col_ann_1[,1, drop=FALSE]
 df <- as.data.frame(t(phylo_reshape))
 df_ordered <- df[rownames(col_ann), ]#reorder matrix based on annotation
 
-df_zscore <- log2(df_ordered +1)#log2 transformation
-summary(df_zscore)
+df_norm <- log2(df_ordered +1)#log2 transformation
+summary(df_norm)
 
 library(RColorBrewer)
 myColor <- rev(brewer.pal(11, "Spectral"))
@@ -62,7 +62,7 @@ myColor <- rev(brewer.pal(11, "Spectral"))
 ann_colors = list(Group = c("WT-Young"="#f39a8f", "WT-Old"="#d95475", "KO-Young"="#f2d58c", "KO-Old"="#ef811e"),
                   Phylum = c("p__Firmicutes"="#62bf82", "p__Actinobacteria"="#629fbf", "p__Proteobacteria"="#bf629f","p__Bacteroidetes"="#bf8262",
                              "p__Candidatus_Saccharibacteria" = "#9fbf62","p__Verrucomicrobia"="#bfb162"))#specify colors for annotation
-p<-pheatmap(t(df_zscore), color = myColor,
+p<-pheatmap(t(df_norm), color = myColor,
             cellheight = 12,
             cellwidth = 25,
             fontsize_row=8, 
