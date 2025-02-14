@@ -71,7 +71,7 @@ p<-pheatmap(t(df_norm), color = myColor,
             cluster_cols = F, border_color = NA)
 
 p
-pdf(file.path(path,"species_heatmap_group_avg_new.pdf"), width = 8, height =12)
+pdf(file.path(path,"species_heatmap_group_avg.pdf"), width = 8, height =12)
 p
 dev.off()
 
