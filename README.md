@@ -4,9 +4,14 @@ This study investigates the impact of succinate on aging-related oral dysbiosis 
 interventions in aging-related oral health issues.
 
 **Key Findings:**
-- Increased succinate levels and alveolar bone loss in aged WT mice.
-- Reduced bone loss and inflammation in aged SUCNR1 KO mice.
-- Significant shifts in the oral microbiome associated with aging.
+
+- Aging-associated alveolar bone loss is accompanied by shifts in the oral microbiome
+and changes in succinate levels.
+- The absence of the SUCNR1 receptor altered the age-related structure of the oral
+microbial community.
+- Reduced age-related changes in functional potential at the gene family level occur in
+the absence of SUCNR1.
+- Reduced age-related bone loss and inflammation in the absence of SUCNR1.
 
 ## Repository Organization
 
