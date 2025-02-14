@@ -1,5 +1,5 @@
 #functions for beta diversity PCoA
-#author: Fangxi Xu
+
 #load required packages
 library(phyloseq)
 library(ggplot2)
