@@ -77,60 +77,6 @@ p
 dev.off()
 
 
-################
-#species level heatmap (individual sample based)
-taxa = c("Species")
-group = c("Group")
-phylo_melt <- tax_glom(phylo, taxa) %>%#agglomerate at the domain taxonomic rank 
-  psmelt()# melt phylo object into large data frame
-
-df = subset(phylo_melt, select = c("Sample",taxa,"Abundance"))#select columns to use; put value variable at the end
-#merge duplicated rows
-df %>%
-  group_by(Sample, .data[[taxa]]) %>%
-  summarise_all(sum) %>%
-  data.frame() -> df
-
-phylo_reshape <- reshape2::dcast(df, Sample ~ Species, value.var='Abundance') %>% #transform data 
-  remove_rownames %>% column_to_rownames(var="Sample") %>% #column "Sample" to row name
-  t()%>% as.data.frame()
-
-#prepare row annotation - species
-row_ann <- phylo_melt[,c(30:36)]
-row_ann <- row_ann[!duplicated(row_ann), ] %>%
-  remove_rownames %>% column_to_rownames(var="Species")
-row_ann <- row_ann[,2, drop=FALSE]
-
-#prepare column annotation - group
-col_ann <- data.frame(sample_data(phylo))
-col_ann <- col_ann[order(col_ann$Group),]
-col_ann$Group <- as.character(col_ann$Group)
-col_ann <-col_ann[,26, drop=FALSE]
-
-df <- as.data.frame(t(phylo_reshape))
-df_ordered <- df[rownames(col_ann), ]#reorder matrix based on annotation
-
-df_zscore <- scale(df_ordered )#Z score transformation
-summary(df_zscore)
-
-
-myColor <- colorRamp2(c(-2, 0, 2), hcl_palette = "Blue-Red 2")
-ann_colors = list(Group = c("WT-Young"="#f39a8f", "WT-Old"="#d95475", "KO-Young"="#f2d58c", "KO-Old"="#ef811e"),
-                  Phylum = c("p__Firmicutes"="#62bf82", "p__Actinobacteria"="#629fbf", "p__Proteobacteria"="#bf629f","p__Bacteroidetes"="#bf8262",
-                             "p__Candidatus_Saccharibacteria" = "#9fbf62","p__Verrucomicrobia"="#bfb162"))#specify colors for annotation
-p<-pheatmap(t(df_zscore), scale = "row",color = myColor,
-            cellheight = 12,
-            cellwidth = 4,
-            fontsize_row=8, 
-            fontsize_col=12, 
-            show_colnames = T,show_rownames = T, annotation_col = col_ann, annotation_row = row_ann, annotation_colors = ann_colors,
-            angle_col = "45",  cluster_cols = F)
-
-p
-pdf(file.path(path,"species_heatmap_sample_based.pdf"), width = 12, height =8)
-p
-dev.off()
-
 
 
 
