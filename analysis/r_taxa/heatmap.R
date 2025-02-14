@@ -53,8 +53,7 @@ col_ann_1 <- col_ann_1[,1, drop=FALSE]
 df <- as.data.frame(t(phylo_reshape))
 df_ordered <- df[rownames(col_ann), ]#reorder matrix based on annotation
 
-#df_ordered_zscore <- scale(df_ordered)#Z score transformation
-df_zscore <- log2(df_ordered +1)#Z score transformation
+df_zscore <- log2(df_ordered +1)#log2 transformation
 summary(df_zscore)
 
 library(RColorBrewer)
