@@ -31,7 +31,7 @@ colnames(edge_list) <- c("species", "sample", "abundance")
 edge_list <- merge(edge_list, sample_data_df, by.x = "sample", by.y = "row.names")
 edge_list$color <- group_colors[edge_list$Group]
 
-# Create and plot network graph
+# Create and plot network
 network <- graph_from_data_frame(d = edge_list[, c("species", "sample")], directed = FALSE)
 E(network)$abundance <- edge_list$abundance
 E(network)$color <- edge_list$color
