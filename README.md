@@ -1,6 +1,6 @@
 # Project Overview
 
-This study explores the impact of succinate on aging-related oral dysbiosis and inflammation. Using both wild-type (WT) and succinate receptor 1 knockout (SUCNR1 KO) mice, we investigate changes in the oral microbiome and alveolar bone loss as these mouse age. Our results highlight the importance of succinate signaling through SUCNR1 in regulating inflammation, alveolar bone loss, and shifts in the oral microbiome, offering potential targets for therapeutic
+This study investigates the impact of succinate on aging-related oral dysbiosis and inflammation. Our results highlight the importance of succinate signaling through SUCNR1 in regulating inflammation, alveolar bone loss, and shifts in the oral microbiome, offering potential targets for therapeutic
 interventions in aging-related oral health issues.
 
 **Key Findings:**
