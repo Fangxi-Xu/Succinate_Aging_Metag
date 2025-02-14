@@ -17,17 +17,13 @@ interventions in aging-related oral health issues.
 
 ## Featured Figures
 
-Below are some key figures from our research:
-
-![Figure 1](/figures/figure1.png)
-*Figure 1: Shifts in gene expression related to aging.*
-
-![Figure 2](/figures/figure2.png)
-*Figure 2: Changes in weighted UniFrac beta diversity.*
+![Figure 3](/figures/Figure3_final_submission.png)
+*Figure 3: Reduced age-related changes in functional potential at the gene family level occur in
+the absence of SUCNR1.*
 
 ## Publication
 
-- [Insert Citation Here]
+link pending
 
 ## Author Contact
 
